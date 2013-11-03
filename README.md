@@ -15,7 +15,7 @@ There will now be a new twig filter called `excerpt`. It grabs the first paragra
 
 So you can use it like {{ content|excerpt }} and it will print the first paragraph from that pages markdown file.
 
-There will also be a filter called `limit_words`. It is used in the same way, and the limit is controlled in the plugins config file.
+There will also be a filter called `limit_words`. It is used in the same way, and the limit is controlled in the [plugins config file](https://github.com/PhileCMS/Twig-Filters-Plugin/blob/master/config.php#L3).
 
 ### Adding More Filters
 
