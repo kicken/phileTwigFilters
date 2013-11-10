@@ -6,8 +6,8 @@ An example plugin for [Phile](https://github.com/PhileCMS/Phile) showing how to 
 ### Installation
 
 * Install [Phile](https://github.com/PhileCMS/Phile)
-* Clone this repo into `plugins/phileTwigFilter`
-* add `$config['plugins']['phileTwigFilter'] = array('active' => true);` to your `config.php`
+* Clone this repo into `plugins/phileTwigFilters`
+* add `$config['plugins']['phileTwigFilters'] = array('active' => true);` to your `config.php`
 
 ### Usage
 
