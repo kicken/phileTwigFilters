@@ -3,11 +3,15 @@ Twig-Filters-Plugin
 
 An example plugin for [Phile](https://github.com/PhileCMS/Phile) showing how to make [Twig filters](http://twig.sensiolabs.org/doc/advanced.html#filters).
 
-### Installation
+### 1.1 Installation (composer)
+```
+php composer.phar require phile/twig-filters:*
+```
+### 1.2 Installation (Download)
 
 * Install [Phile](https://github.com/PhileCMS/Phile)
-* Clone this repo into `plugins/phileTwigFilters`
-* add `$config['plugins']['phileTwigFilters'] = array('active' => true);` to your `config.php`
+* Clone this repo into `plugins/phile/twigFilters`
+* add `$config['plugins']['phile\\twigFilters'] = array('active' => true);` to your `config.php`
 
 ### Usage
 
