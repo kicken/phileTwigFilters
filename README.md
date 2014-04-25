@@ -11,7 +11,14 @@ php composer.phar require phile/twig-filters:*
 
 * Install [Phile](https://github.com/PhileCMS/Phile)
 * Clone this repo into `plugins/phile/twigFilters`
-* add `$config['plugins']['phile\\twigFilters'] = array('active' => true);` to your `config.php`
+
+### 2. Activation
+
+After you have installed the plugin. You need to add the following line to your `config.php` file:
+
+```
+$config['plugins']['phile\\twigFilters'] = array('active' => true);
+```
 
 ### Usage
 
