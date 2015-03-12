@@ -34,8 +34,14 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 			// limit words function -- very rough limit due to HTML input
 			$limit_words = new \Twig_SimpleFilter('limit_words', function ($string) {
 				$words = str_word_count($string, 2);
+				$nbwords = str_word_count($string, 0);
 				$pos = array_keys($words);
-				return trim(substr($string, 0, $pos[$this->settings['limit']])) . '...';
+				if ($this->settings['limit'] > $nbwords) {
+					return trim($string);
+				}
+				else {
+					return trim(substr($string, 0, $pos[$this->settings['limit']])) . '...';
+				}
 			});
 			$data['engine']->addFilter($limit_words);
 		}

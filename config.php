@@ -2,4 +2,4 @@
 /**
  * config file
  */
-return array('limit' => 55);
+return array('limit' => 58);
