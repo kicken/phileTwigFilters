@@ -34,9 +34,9 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 			// limit words function -- very rough limit due to HTML input
 			$limit_words = new \Twig_SimpleFilter('limit_words', function ($string) {
 				$words = str_word_count($string, 2);
-				$nbwords = str_word_count($string, 0);
+				$nbwords = count($words);
 				$pos = array_keys($words);
-				if ($this->settings['limit'] > $nbwords) {
+				if ($this->settings['limit'] >= $nbwords) {
 					return trim($string);
 				}
 				else {
@@ -44,6 +44,11 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 				}
 			});
 			$data['engine']->addFilter($limit_words);
+			$datefr = new \Twig_SimpleFilter('datefr', function ($string){   
+				setlocale (LC_TIME, 'fr_FR.utf8','fra');
+        return utf8_encode(strftime("%A %d   /%m/%Y", strtotime($string)));
+			});
+			$data['engine']->addFilter($datefr);
 		}
 	}
 }
