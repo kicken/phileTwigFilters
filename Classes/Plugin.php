@@ -44,11 +44,6 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 				}
 			});
 			$data['engine']->addFilter($limit_words);
-			$datefr = new \Twig_SimpleFilter('datefr', function ($string){   
-				setlocale (LC_TIME, 'fr_FR.utf8','fra');
-        return utf8_encode(strftime("%A %d   /%m/%Y", strtotime($string)));
-			});
-			$data['engine']->addFilter($datefr);
 		}
 	}
 }
