@@ -1,7 +1,7 @@
 {
 	"name": "phile/twig-filters",
 	"type": "phile-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "description": "An example plugin for Phile showing how to make Twig filters.",
     "homepage": "http://philecms.com",
