@@ -17,6 +17,9 @@
       "role": "Developer"
     }
   ],
+  "autoload": {
+    "classmap": ["Classes/"]
+  },
   "require": {
     "phile-cms/phile-core": "dev-master"
   },
