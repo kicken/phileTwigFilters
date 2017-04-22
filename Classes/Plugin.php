@@ -5,7 +5,8 @@
 
 namespace Phile\Plugin\Phile\TwigFilters;
 
-use Phile\Event\ServiceEvent;
+use Phile\Core\ServiceLocator;
+use Phile\Event\CoreEvent;
 use Phile\Plugin\AbstractPlugin;
 use Phile\Plugin\TemplateTwig\TwigTemplatePlugin;
 
@@ -16,14 +17,14 @@ use Phile\Plugin\TemplateTwig\TwigTemplatePlugin;
 class Plugin extends AbstractPlugin {
     public static function getSubscribedEvents(){
         return [
-            ServiceEvent::REGISTERED => 'onServiceRegistered'
+            CoreEvent::LOADED => 'onCoreLoaded'
         ];
     }
 
-    public function onServiceRegistered(ServiceEvent $event){
-        $service = $event->getService();
-        if ($service instanceof TwigTemplatePlugin){
-            $twig = $service->getTwig();
+    public function onCoreLoaded(){
+        $template = ServiceLocator::getService('Phile_Template');
+        if ($template instanceof TwigTemplatePlugin){
+            $twig = $template->getTwig();
 
             // grab the first paragraph and remove all the html code
             $excerpt = new \Twig_SimpleFilter('excerpt', function ($string){
